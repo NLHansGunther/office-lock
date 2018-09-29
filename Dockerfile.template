@@ -16,10 +16,10 @@ RUN apt-get update && apt-get install -yq \
 WORKDIR /usr/src/app
 
 # Install neopixel library
-# RUN git clone https://github.com/NLHansGunther/rpi_ws281x && cd rpi_ws281x && scons deb && cd python && python setup.py install
+RUN git clone https://github.com/NLHansGunther/rpi_ws281x && cd rpi_ws281x && scons deb && cd python && python setup.py install
 
 # Install PN532 library
-# RUN git clone https://github.com/NLHansGunther/Adafruit_Python_PN532 && cd Adafruit_Python_PN532 && python setup.py install
+RUN git clone https://github.com/NLHansGunther/Adafruit_Python_PN532 && cd Adafruit_Python_PN532 && python setup.py install
 
 # Copy requirements.txt first for better cache on later pushes
 COPY ./requirements.txt /requirements.txt
